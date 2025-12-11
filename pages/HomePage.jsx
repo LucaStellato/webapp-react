@@ -17,11 +17,11 @@ export default function HomePage() {
     return (
         <>
             {movies.map((movie) => (
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">{movie.title}</h5>
-                        <p class="card-text">{movie.abstract}</p>
+                <div className="card" style={{ width: '18rem' }}>
+                    <img src={`http://localhost:3000/images/${movie.image}`} className="card-img-top" alt="..." />
+                    <div className="card-body">
+                        <h5 className="card-title">{movie.title}</h5>
+                        <p className="card-text">{movie.abstract}</p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
