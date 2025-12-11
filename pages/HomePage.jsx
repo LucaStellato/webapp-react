@@ -16,17 +16,19 @@ export default function HomePage() {
     })
     return (
         <>
-            {movies.map((movie) => (
-                <div className="card" style={{ width: '18rem' }}>
-                    <img src={`http://localhost:3000/images/${movie.image}`} className="card-img-top" alt="..." />
-                    <div className="card-body">
-                        <h5 className="card-title">{movie.title}</h5>
-                        <p className="card-text">{movie.abstract}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h1 style={{ textAlign: 'center' }}>Movie list</h1>
+            <div className="row h-100" style={{ alignItems: 'center', marginLeft: '60px' }}>
+                {movies.map((movie) => (
+                    <div className="card m-2" style={{ width: '18rem' }} key={movie.id}>
+                        <img src={`http://localhost:3000/images/${movie.image}`} className="card-img-top" alt={movie.title} />
+                        <div className="card-body">
+                            <h5 className="card-title">{movie.title}</h5>
+                            <p className="card-text">{movie.abstract}</p>
+                            <a href="#" className="btn btn-primary">Dettagli</a>
+                        </div>
                     </div>
-                </div>
-
-            ))}
+                ))}
+            </div>
         </>
     )
 } 
