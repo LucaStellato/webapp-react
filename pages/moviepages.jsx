@@ -7,6 +7,9 @@ export default function moviepages() {
 
     useEffect(() => {
         axios.get(`http://localhost:3000/${id}`)
+            .then(response => {
+                setBook(response.data)
+            })
     })
 
     return (
