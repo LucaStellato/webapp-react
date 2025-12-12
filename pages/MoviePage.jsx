@@ -51,11 +51,11 @@ export default function MoviePage() {
                     <div className="text-center">
                         <strong>LASCIA UN TUO FEED</strong>
                         <div className="mb-3 m-4">
-                            <label for="name" className="form-label">Insert your name</label>
+                            <label htmlFor="name" className="form-label">Insert your name</label>
                             <input type="text" className="form-control" id="name" placeholder="name" />
                         </div>
                         <div className="mb-3 m-4">
-                            <label for="Select" className="form-label"> select Star</label>
+                            <label htmlFor="Select" className="form-label"> select Star</label>
                             <select id="start" className="form-select">
                                 <option>select</option>
                                 <option>1</option>
@@ -67,7 +67,7 @@ export default function MoviePage() {
                         </div>
 
                         <div className="mb-3 m-4">
-                            <label for="Review" className="form-label">Leave your review</label>
+                            <label htmlFor="Review" className="form-label">Leave your review</label>
                             <textarea className="form-control" id="review" rows="3"></textarea>
                         </div>
                     </div>
