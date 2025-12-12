@@ -71,6 +71,9 @@ export default function MoviePage() {
                             <textarea className="form-control" id="review" rows="3"></textarea>
                         </div>
                     </div>
+                    <div className="text-center">
+                        <strong>COSA PENSANO GLI ALTRI UTENTI</strong>
+                    </div>
 
                     {movie && movie.reviews && movie.reviews.map((review) => (
                         <div className="card p-3 mb-3" key={review.id}>
