@@ -25,6 +25,7 @@ export default function MoviePage() {
         for (let i = 1; i < 5; i++) {
             stars.push(<i className="bi-bi-star"></i>)
         }
+        return stars
     }
 
     return (
@@ -62,6 +63,12 @@ export default function MoviePage() {
                     <textarea class="form-control" id="review" rows="3"></textarea>
                 </div>
             </div>
+
+            {movie.reviews.map(review =>
+                <div className="card p-3 mb-3">
+                    <strong>{review.name}</strong>
+                </div>
+            )}
 
         </>
     )
