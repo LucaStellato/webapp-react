@@ -21,6 +21,10 @@ export default function MoviePage() {
         for (let i = 1; i <= vote; i++) {
             stars.push(<i className="bi-bi-star-fill"></i>)
         }
+        console.log(stars);
+        for (let i = 1; i < 5; i++) {
+            stars.push(<i className="bi-bi-star"></i>)
+        }
     }
 
     return (
