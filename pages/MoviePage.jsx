@@ -19,11 +19,11 @@ export default function MoviePage() {
     function getRating(vote) {
         let stars = []
         for (let i = 0; i < vote; i++) {
-            stars.push(<i className="bi bi-star-fill"></i>)
+            stars.push(<i className="bi bi-star-fill" key={`fill-${i}`}></i>)
         }
         console.log(stars);
         for (let i = vote; i < 5; i++) {
-            stars.push(<i className="bi bi-star"></i>)
+            stars.push(<i className="bi bi-star" key={`${i}`}></i>)
         }
         return stars
     }
@@ -50,13 +50,13 @@ export default function MoviePage() {
                     </div>
                     <div className="text-center">
                         <strong>LASCIA UN TUO FEED</strong>
-                        <div class="mb-3 m-4">
-                            <label for="name" class="form-label">Insert your name</label>
-                            <input type="text" class="form-control" id="name" placeholder="name" />
+                        <div className="mb-3 m-4">
+                            <label for="name" className="form-label">Insert your name</label>
+                            <input type="text" className="form-control" id="name" placeholder="name" />
                         </div>
-                        <div class="mb-3 m-4">
-                            <label for="Select" class="form-label"> select Star</label>
-                            <select id="start" class="form-select">
+                        <div className="mb-3 m-4">
+                            <label for="Select" className="form-label"> select Star</label>
+                            <select id="start" className="form-select">
                                 <option>select</option>
                                 <option>1</option>
                                 <option>2</option>
@@ -66,14 +66,14 @@ export default function MoviePage() {
                             </select>
                         </div>
 
-                        <div class="mb-3 m-4">
-                            <label for="Review" class="form-label">Leave your review</label>
-                            <textarea class="form-control" id="review" rows="3"></textarea>
+                        <div className="mb-3 m-4">
+                            <label for="Review" className="form-label">Leave your review</label>
+                            <textarea className="form-control" id="review" rows="3"></textarea>
                         </div>
                     </div>
 
                     {movie && movie.reviews && movie.reviews.map((review) => (
-                        <div className="card p-3 mb-3">
+                        <div className="card p-3 mb-3" key={review.id}>
                             <strong>{review.name}</strong>
                             <p>
                                 {review.text}
