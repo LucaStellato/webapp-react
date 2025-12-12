@@ -18,11 +18,11 @@ export default function MoviePage() {
 
     function getRating(vote) {
         let stars = []
-        for (let i = 1; i <= vote; i++) {
+        for (let i = 0; i < vote; i++) {
             stars.push(<i className="bi bi-star-fill"></i>)
         }
         console.log(stars);
-        for (let i = 1; i < 5; i++) {
+        for (let i = vote; i < 5; i++) {
             stars.push(<i className="bi bi-star"></i>)
         }
         return stars
@@ -79,7 +79,7 @@ export default function MoviePage() {
                                 {review.text}
                             </p>
                             <div className="rating">
-                                {getRating(review.rating)}
+                                {getRating(review.vote)}
                             </div>
                         </div>
                     ))}
