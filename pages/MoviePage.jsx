@@ -16,6 +16,12 @@ export default function MoviePage() {
             })
     }, [])
 
+    function getRating(vote) {
+        let stars = []
+        for (let i = 1; i <= vote; i++) {
+            stars.push(<i className="bi-bi-star-fill"></i>)
+        }
+    }
 
     return (
         <>
