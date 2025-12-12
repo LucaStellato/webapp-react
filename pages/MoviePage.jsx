@@ -4,7 +4,7 @@ import axios from "axios";
 
 export default function MoviePage() {
     const { id } = useParams();
-    const [movie, setMovie] = useState([]);
+    const [movie, setMovie] = useState(null);
     const urlImage = 'http://localhost:3000/images/'
 
     useEffect(() => {
@@ -14,16 +14,16 @@ export default function MoviePage() {
                 setMovie(response.data)
 
             })
-    }, [])
+    }, [id])
 
     function getRating(vote) {
         let stars = []
         for (let i = 1; i <= vote; i++) {
-            stars.push(<i className="bi-bi-star-fill"></i>)
+            stars.push(<i className="bi bi-star-fill"></i>)
         }
         console.log(stars);
         for (let i = 1; i < 5; i++) {
-            stars.push(<i className="bi-bi-star"></i>)
+            stars.push(<i className="bi bi-star"></i>)
         }
         return stars
     }
@@ -64,11 +64,17 @@ export default function MoviePage() {
                 </div>
             </div>
 
-            {movie.reviews.map(review =>
+            {movie.reviews.map((review) => (
                 <div className="card p-3 mb-3">
                     <strong>{review.name}</strong>
+                    <p>
+                        {review.text}
+                    </p>
+                    <div className="rating">
+                        {getRating(review.rating)}
+                    </div>
                 </div>
-            )}
+            ))}
 
         </>
     )
