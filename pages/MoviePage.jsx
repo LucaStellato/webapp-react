@@ -21,7 +21,8 @@ export default function MoviePage() {
         <>
             <div className="container d-flex">
 
-                <img src={`${urlImage}${movie.image}`} alt={movie.title} />
+                <img src={`${urlImage}${movie.image}`} className="" style={{ width: '200px' }} alt={movie.title} />
+
 
 
             </div>
