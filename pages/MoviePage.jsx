@@ -19,7 +19,7 @@ export default function MoviePage() {
     function getRating(vote) {
         let stars = [];
         for (let i = 0; i < vote; i++) {
-            stars.push(<i className="bi bi-star-fill" key={`fill-${i}`}></i>);
+            stars.push(<i className="bi bi-star-fill text-warning " key={`fill-${i}`}></i>);
         }
         for (let i = vote; i < 5; i++) {
             stars.push(<i className="bi bi-star" key={`${i}`}></i>);
