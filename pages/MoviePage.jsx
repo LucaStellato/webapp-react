@@ -59,7 +59,7 @@ export default function MoviePage() {
                     <div className="text-center">
                         <strong>LASCIA UN TUO FEED</strong>
 
-                        <FormReview />
+                        <FormReview id={id} />
 
                     </div>
 

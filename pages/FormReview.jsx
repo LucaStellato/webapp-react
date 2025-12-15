@@ -1,5 +1,6 @@
 import { useState } from "react";
-export default function FormReview() {
+import axios from "axios";
+export default function FormReview({ id }) {
     const initialFormState = {
         name: "",
         vote: "",
