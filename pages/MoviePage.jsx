@@ -21,7 +21,7 @@ export default function MoviePage() {
         for (let i = 0; i < vote; i++) {
             stars.push(<i className="bi bi-star-fill" key={`fill-${i}`}></i>)
         }
-        console.log(stars);
+        //console.log(stars);
         for (let i = vote; i < 5; i++) {
             stars.push(<i className="bi bi-star" key={`${i}`}></i>)
         }
@@ -77,11 +77,11 @@ export default function MoviePage() {
                         <form onSubmit={handleSubmit}>
                             <div className="mb-3 m-4">
                                 <label htmlFor="name" className="form-label">Insert your name</label>
-                                <input type="text" className="form-control" id="name" placeholder="name" />
+                                <input type="text" className="form-control" id="name" placeholder="name" value={formData.name} onChange={(e) => SetFormData({ ...formData, name: e.target.value })} />
                             </div>
                             <div className="mb-3 m-4">
                                 <label htmlFor="Select" className="form-label"> select Star</label>
-                                <select id="start" className="form-select">
+                                <select id="start" className="form-select" value={formData.vote} onChange={(e) => SetFormData({ ...formData, vote: e.target.value })}>
                                     <option>select</option>
                                     <option>1</option>
                                     <option>2</option>
@@ -93,8 +93,9 @@ export default function MoviePage() {
 
                             <div className="mb-3 m-4">
                                 <label htmlFor="Review" className="form-label">Leave your review</label>
-                                <textarea className="form-control" id="review" rows="3"></textarea>
+                                <textarea className="form-control" id="text" rows="3" value={formData.text} onChange={(e) => SetFormData({ ...formData, text: e.target.value })}></textarea>
                             </div>
+                            <button className="btn btn-primary" type="submit">Submit form</button>
                         </form>
                     </div>
 
