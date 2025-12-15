@@ -43,7 +43,7 @@ export default function FormReview({ id }) {
                     <label htmlFor="Review" className="form-label">Leave your review</label>
                     <textarea className="form-control" id="text" rows="3" value={formData.text} onChange={(e) => SetFormData({ ...formData, text: e.target.value })}></textarea>
                 </div>
-                <button className="btn btn-primary" type="submit">Submit form</button>
+                <button className="btn btn-primary ms-4" type="submit">Submit form</button>
             </form>
 
         </>
