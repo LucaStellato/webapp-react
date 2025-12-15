@@ -74,27 +74,32 @@ export default function MoviePage() {
                     </div>
                     <div className="text-center">
                         <strong>LASCIA UN TUO FEED</strong>
-                        <div className="mb-3 m-4">
-                            <label htmlFor="name" className="form-label">Insert your name</label>
-                            <input type="text" className="form-control" id="name" placeholder="name" />
-                        </div>
-                        <div className="mb-3 m-4">
-                            <label htmlFor="Select" className="form-label"> select Star</label>
-                            <select id="start" className="form-select">
-                                <option>select</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                        </div>
+                        <form onSubmit={handleSubmit}>
+                            <div className="mb-3 m-4">
+                                <label htmlFor="name" className="form-label">Insert your name</label>
+                                <input type="text" className="form-control" id="name" placeholder="name" />
+                            </div>
+                            <div className="mb-3 m-4">
+                                <label htmlFor="Select" className="form-label"> select Star</label>
+                                <select id="start" className="form-select">
+                                    <option>select</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
 
-                        <div className="mb-3 m-4">
-                            <label htmlFor="Review" className="form-label">Leave your review</label>
-                            <textarea className="form-control" id="review" rows="3"></textarea>
-                        </div>
+                            <div className="mb-3 m-4">
+                                <label htmlFor="Review" className="form-label">Leave your review</label>
+                                <textarea className="form-control" id="review" rows="3"></textarea>
+                            </div>
+                        </form>
                     </div>
+
+
+
                     <div className="text-center">
                         <strong>COSA PENSANO GLI ALTRI UTENTI</strong>
                     </div>
