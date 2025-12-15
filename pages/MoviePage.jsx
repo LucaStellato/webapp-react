@@ -28,6 +28,30 @@ export default function MoviePage() {
         return stars
     }
 
+    const initialFormState = {
+        name: "",
+        vote: "",
+        text: ""
+    };
+    const [formData, SetFormData] = useState(initialFormState);
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log("form submitted");
+
+        axios.post(`http://localhost:3000/movies/${id}/reviews`, formData)
+            .then((response) => {
+                console.log("review submitted successfully", response.data);
+
+            })
+            .catch((error) => {
+                console.error("error submitting review", error)
+            })
+    }
+
+
+
+
     return (
 
         <>
