@@ -1,20 +1,25 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import { useLoading } from '../src/LoadingContex';
 
 import axios from 'axios'
 export default function HomePage() {
     const [movies, setMovies] = useState([]);
     const endpoint = 'http://localhost:3000/movies'
     const urlImage = 'http://localhost:3000/images/'
+    const { setLoading } = useLoading()
+
     useEffect((fetchMovies) => {
+        setLoading(true)
         axios.get(endpoint)
             .then(response => {
                 setMovies(response.data);
-            })
-            .catch(error => {
+                setLoading(false)
+            }).catch(error => {
                 console.error("Errore nel recupero dei film:", error);
             });
-    })
+
+    }, [])
     return (
         <>
             <h1 style={{ textAlign: 'center' }}>Movie list</h1>
