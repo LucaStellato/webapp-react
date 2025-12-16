@@ -16,5 +16,6 @@ export function CreateContext({ children }) {
 }
 
 export function useLoading() {
-
+    const context = useContext(LoadingContext);
+    return context
 }
